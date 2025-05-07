@@ -1,0 +1,48 @@
+<!-- Modal content -->
+<div class="modal-content">
+    <div class="close" id="clsbtn" >&times;</div>
+        <div class="modal-car">
+            <div  class="modal-car-details1">
+                <img class="modal-car-img" src="images/flower2.png">
+                <div class="modal-car-name">
+                    <h1><span id="name">Kush Name5</span></h1>
+                </div>
+            </div>   
+            <div class=" modal-car-details2">
+                <div class="flower-det">
+                    <div class="info-item">
+                        <img class="info-item-img" src="images/icons/category.webp">
+                        <p> Indica </p>
+                    </div>
+                    <div class="info-item">
+                        <img class="info-item-img" src="images/icons/percent.webp">
+                        <p> 25% </p>
+                    </div>
+                    <div class="info-item">
+                        <img class="info-item-img" src="images/icons/price_tag.webp">
+                        <label for="weight"> Weight: </label>
+                        <select id="weight" onchange="changePrice('quant5', 'price')">
+                            <option value="35">3.5</option>
+                            <option value="70">7</option>
+                            <option value="120">14</option>
+                            <option value="200">28</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flower-description">
+                    <p>
+                        Brief description of the kush
+                    </p>
+                </div>
+
+                <div class="add-section">
+                    <div class="priceDiv">
+                        Price : $<span class="price" id="price" value="20">35</span>
+                    </div>
+                    <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quant5', 'weight', 'price')"> - </button> <span id="quant5" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quant5', 'weight', 'price')"> + </button> </span></div>
+                    <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower2.png','name', 'weight', 'price', 'quant5' )"> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+</div>

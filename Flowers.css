@@ -1,0 +1,823 @@
+*{
+    box-sizing: border-box;
+}
+
+#body{
+    margin: 0;
+    width: 100%;
+    height: fit-content;
+    overflow-x: none ;
+    transition: 0.6s ease-in-out;
+    background-color: black;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.headr{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+}
+
+.pageTitle{
+    margin: 15px;
+    color: white;
+}
+
+.redPart{
+    color: red;
+    text-transform: capitalize;
+}
+
+.menu{
+    padding: 15px;
+    float: right;
+}
+
+a{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(156 163 175);
+    text-decoration: none;
+}
+
+a:hover{
+  color: rgb(34, 197, 94);
+}
+
+.Brabus-holder{
+    position: static;
+    width: 100vw;
+    background-image: url("SAMPLE19.jpg");
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 60vh;
+    align-items: center;
+}
+
+.content2{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.cntnt1-info{
+  text-align: left;
+  width: 80vw;
+  height: 100%;
+  color: white;
+  padding-left: 30px;
+}
+
+.cntnt1-info h1{
+  font-size: 35pt;
+  color: red;
+}
+
+.cntnt2-info{
+    text-align: center;
+    width: 60vw;
+    font-size: 2vh;
+    margin-left: 15px;;
+    line-height: 2.5vh;
+    color: black;
+}
+
+.content2 img{
+    position: relative;
+    width: 20%;
+    height: 200px;
+    align-items: center;
+    
+}
+
+.brabus-disp{
+    position: relative;
+    height: fit-content;
+    padding-bottom: 320px;
+    background-color: #09c7fb;
+    background-image: linear-gradient(315deg, #09c7fb 0%, #93fb9d 74%);
+    padding-top: 20px;   
+}
+
+.card-holder{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.brabus-card{
+    width: fit-content;
+    height: 300px;  /* HAs to be the same size as the image, to prevent increase in the height of the div when the card info appears*/
+    display: inline-block;
+    transition: 0.6s;    
+}
+
+.img-holder{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    z-index: 0;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    transition: 0.6s;
+}
+
+.brabus-card-img  {
+    margin: auto;
+    width: 150px;
+    height: 200px;
+}
+
+.img-holder:hover {
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.8), 0 9px 20px 0 rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+}
+
+.car-info{
+  position: relative;
+  float: top;
+  width: 300px;
+  background-color: #09c7fb;
+    background-image: linear-gradient(315deg, #09c7fb 0%, #93fb9d 74%);
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.weights{
+  background-color:rgba(0, 0, 0, 0.1);
+}
+
+.car-info, table{
+  border-collapse: collapse;
+  font-size: 10pt;
+  z-index: 1;
+  overflow: hidden;
+  height: 0;
+  vertical-align: bottom;
+  width: 100%;
+  transform: scale(0);
+  transition: 0.6s ease-in;
+  
+}
+
+
+.brabus-card:hover .car-info, table{
+  transform: scale(1);
+  height: fit-content;
+}
+
+.brabus-card:hover .car-info{
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.8), 0 9px 20px 0 rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+}
+
+.car-info td{
+  padding: 8px 8px 8px 3px;
+  border-bottom: 1px solid black;
+
+}
+
+.car-info tbody{
+  width: 100%;
+}
+
+.lft-colm{
+  width: 30%;
+}
+
+.right-colm{
+    width: 60%;
+    text-align: center;
+    color: red;
+}
+
+.last-colm{
+    width: 100%;
+    text-align: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    align-content: center;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    overflow-y: auto;
+    border-radius: 25px;
+    animation-name: zoom;
+    animation-duration: 0.5s;
+  }
+
+  .cart-modal-content{
+    background-color: white;
+    padding: 20px;
+    margin-left: 70%;
+    border: 1px solid #888;
+    width: 30%;
+    height: 100%;
+    overflow-y: auto;
+    border-radius: 25px;
+    animation-name: zoom;
+    animation-duration: 0.5s;
+  }
+
+  .modal-content::-webkit-scrollbar{  /* To prevent visibility of the scroll bar but keep the functionality*/
+    display: none;
+  }
+
+  @keyframes zoom{
+    from{ transform: scale(0);}
+    to{ transform: scale(1);}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+ 
+  .modal-car{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .modal-car-details1{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+  }
+
+  .modal-car-img{
+    width: 20vw;
+    height: 25vw;
+    align-self: center;
+  }
+
+  .modal-car-name{
+    padding: 20px;
+    font-size: 85%;
+  }
+
+  .modal-car-details2{
+    font-size: 12pt;
+    padding-left: 20px;
+    line-height: 1.2;
+    width: 50%;
+    height: 100%;
+    border-left: 2px solid black;
+  }
+
+  .modal-car-details2 h2{
+    text-decoration-line: underline;
+    margin: 15px;
+    text-align: center;
+  }
+
+  .modal-car-details2 h3{
+    display: inline;
+    font-size: 100%;
+    color: red;
+  }
+
+  .flower-det{
+    position: relative;
+    width: 80%;
+    padding: 10px;
+    height: 40%;
+    margin: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .info-item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5vw;
+  }
+
+  .info-item-img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30%;
+    color: red;
+  }
+
+  .add-section{
+    margin-top: 20%;
+    margin-left: 15%;
+    width: 70%;
+    height: 30%;
+    border-radius: 15px;
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .quantBtn{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    border: none;
+    margin: 10px;
+    background-color: #09c7fb;
+  }
+
+  .cartBtn{
+    background-color: #09c7fb;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 40px;
+    font-size: 11pt;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  .cartBtn:hover{
+    background-color: rgba(0, 102, 255, 0.7);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .mini-add-section{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+  }
+
+  .mini-add-section .cartBtn{
+    width: 80%;
+    height: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .mini-add-section .quantBtn{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    align-self: center;
+  }
+
+  .flower-description{
+    text-align: center;
+  }
+
+  .sidePanel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: 0.6s ease-in-out;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.588);
+    color: white;
+    width: 0 ;
+    overflow-x: hidden;
+    font-size: 2%;
+
+}
+
+.sidePanel::-webkit-scrollbar{
+  display: none;
+}
+
+.closebtn{
+  margin-left: 80%;
+  font-size: 25pt;
+  background-color: rgba(0,0,0,0);
+  color: red;
+  border: none;
+}
+
+.cart-info{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.cart-info-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px; 
+  border-bottom: 1px solid black;
+  align-items: center;
+}
+
+.cart-info-item-img{
+  position: relative;
+  width: 40%;
+  height: 80%;
+}
+
+.cart-info-item-name{
+  align-content: center;
+}
+
+.shopcartHolder{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  top: 10%;
+  right: 0;
+  margin-right: -100px;
+  align-content: center;
+  z-index: 2;
+  border-radius: 30px;
+  border: none;
+  transition: 0.6s ease-in-out;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8), 0 3px 10px 0 rgba(0, 0, 0, 0.8);
+}
+
+.shopcartHolder:hover{
+  box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.8), 0 6px 15px 2px rgba(0, 0, 0, 0.8);
+}
+.shopcart{
+  border-radius: 25px;
+  z-index: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.cartIcon{
+  position: relative;
+  align-self: center;
+  height: 40px;
+  width: 40px;
+  z-index: 0;
+}
+
+.cartCount{
+  float: right;
+  font-size: 10pt;
+  color: red;
+  z-index: 2;
+  background-color: #fffbfb;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+}
+
+.cart-info-item-remove{
+  color: blue;
+  font-size: 10pt;
+  height: 30px;
+  width: 60%;
+  border-radius: 15px;
+  border: none;
+}
+
+.total-holder{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.354);
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 70px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: 0.6s ease-in-out;
+  overflow: hidden;
+}
+
+.total{
+  font-size: 15pt;
+  margin-left: 10px;
+  width: fit-content;
+  align-self: center;
+}
+
+.checkout{
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 12pt;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 15px;
+  width: 100px;
+}
+
+.age-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.age-modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.age-modal-content h2 {
+  margin-top: 0;
+}
+
+.age-modal-content button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.age-modal-content button:hover {
+  background-color: #555;
+}
+
+.flower-footer{
+  height: 30vh;
+  background-color: rgb(17 24 39);
+  color: rgb(156 163 175);
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer-content{
+  font-size: 12pt;
+  width: 20vw;
+}
+
+.footer-content a{
+  margin-left: 10px;
+  color: rgb(156 163 175);
+}
+
+.footer-content a:hover{
+  margin-left: 10px;
+  color: rgb(34, 197, 94);
+}
+
+.footer-info{
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 600px){
+    .content2{
+        flex-direction: column;
+    }
+
+    .add-section{
+      font-size: 2.5vw;
+    }
+
+    .card-holder{
+      height: fit-content;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-left: 10px;
+      padding-right: 10px;
+  
+  }
+
+    .cntnt1-info{
+        width: 80vw;
+        padding-left: 10px;
+    }
+
+    .cntnt2-info{
+        width: 80vw;
+        margin-left: 10px;
+    }
+
+    .brabus-card{
+        width: 200px;
+        height: 300px;
+    }
+
+    .img-holder{
+        height: 200px;
+        width: 200px;
+    }
+
+    .car-info{
+        width: 200px;
+    }
+
+    .cart-modal-content{
+        width: 50vw;
+    }
+
+    .modal-car{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+
+    .modal-car-details1{
+      align-self: center;
+  }
+
+    .modal-car-details2{
+        border-left: none;
+        border-top: 1px solid black;
+        width: 100%;
+    }
+
+    .modal-car-img{
+        width: 15vw;
+        height: 20vw;
+    }
+
+
+    .flower-det{
+
+        height: 40%;
+        padding: none;
+        align-items: center;
+    }
+
+    .cart-info-item{
+        padding: 20px;
+    }
+
+    .cart-info-item-img{
+        width: 50%;
+    }
+
+    .cart-info-item-name{
+        font-size: 10pt;
+    }
+
+    .cart-info-item-remove{
+        font-size: 2.5vw;
+        width: fit-content;
+    }
+
+    .total-holder{
+        height: 50px;
+    }
+
+    .total{
+        font-size: 3vw;
+    }
+
+    .checkout{
+        font-size: 10pt;
+        margin-right: 5px;
+        width: 15vw;
+    }
+
+    .footer-content{
+      font-size: 10pt;
+      width: 40vw;
+    }
+
+    .flower-footer{
+      height: fit-content;
+      width: fit-content;
+      flex-wrap: wrap;
+    }
+
+    .social-media a img{
+      width: 25px;
+      height: 25px;
+    }
+
+    .info-item{
+    
+      font-size: 2.5vw;
+    }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px){
+  
+  .cart-info-item{
+    padding: 20px;
+  }
+
+  .cart-info-item-img{
+      width: 50%;
+  }
+
+  .cart-info-item-name{
+      font-size: 10pt;
+  }
+
+  .cart-info-item-remove{
+      font-size: 2vw;
+      width: fit-content;
+  }
+
+  .total-holder{
+      height: 50px;
+  }
+
+  .total{
+      font-size: 2.5vw;
+  }
+
+  .checkout{
+      font-size: 2.5vw;
+      margin-right: 5px;
+      width: 15vw;
+  }
+
+  .quantBtn{
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    text-align: center;
+    border: none;
+    margin: 10px;
+    background-color: #09c7fb;
+  }
+
+  .priceDiv{
+    font-size: 2vw;
+  }
+
+  .add-section{
+    font-size: 2vw;
+  }
+
+}
+

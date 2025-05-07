@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1">
+        <title> Car View</title>
+        <link rel="stylesheet" href="checkout.css">
+        <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+       
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </head>
+
+    <body id="body">
+
+        <header class="headr">
+            <div class="pageTitle"> Quad<span class="redPart">Falls</div>
+            <div class="menu">
+                <a href="Flowers.html"> Home </a>
+                <a href="about.html"> About </a>
+                <a> Feedback </a>
+            </div>
+        </header>
+
+        <form class="chckoutForm" id="contact-form" action="#">
+
+            <div name="info" class="checkout-container">
+                <div class="checkout-total" id="checkout-total">
+                    <div id="total" class="total">Total: $<span id="check-total">0</span></div>
+                </div>
+                <div class="checkout-items" id="checkout-items">
+    
+                </div>
+            </div>
+    
+            <div class="checkout-form">                
+                <input class="name" type="text" name="name" placeholder="Name" required>
+                <input class="email" type="email" name="email" placeholder="Email" required>
+                <input id="address1" type="text" name="address" placeholder="Address" required>
+               <!-- <input id="address2" name="address2" placeholder="Apartment, unit, suite, or floor #" />
+                <input id="locality" name="locality" placeholder="City" required />
+                <input id="state" name="state" placeholder="State" required />
+                <input id="postcode" name="postcode" placeholder="Postal Code" required />
+                <input id="country" name="country" placeholder="Country" required /> -->
+                <input class="phoneNumber" type="number" name="phone" placeholder="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input class="deliveryDets" type="text" name="deliveryDets" placeholder="Delivery Details" >              
+                
+                <div class="loader" id="loader">
+                    <i class="lni lni-spinner-3"></i>
+                </div>
+                <div class="form-message"></div>
+
+                <div class="btm-item">
+                    <div id="promoOwner"></div>
+                    <input id="promoField" type="text" name="promoCode" placeholder="Enter Promo Code!" >
+                    <div class="form-buttons">
+                        <button class="promoBtn" id="promoBtn1" type="button" onclick="nterPromo()">Promo Code?</button>
+                        <button class="promoBtn" id="promoBtn2" type="button" onclick="sumitPromo()">Enter</button>
+                        <button type="submit">Checkout</button>
+                    </div>
+                </div>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                <script type="text/javascript" src="checkout.js"> </script>
+
+            </div>
+        </form>
+    </body>
+</html>

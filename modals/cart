@@ -1,0 +1,26 @@
+<!-- Modal content -->
+<div class="cart-modal-content">
+    <div class="close" id="clsbtn" >&times;</div>
+    <div class="cart-info" id="cart-info"> <!-- flex column-->
+        <!--<div class="cart-info-item">    
+            <div class="cart-info-item-name">
+                <h1>Kush Name</h1>
+                <div class="cart-info-item-price">
+                    <p>Price: $30</p>
+                </div>
+            </div>
+            <img class="cart-info-item-img" src="images/flower1.png">
+        </div>
+
+        <div class="cart-info-item">    
+            <div class="cart-info-item-name">
+                <h1>Kush Name</h1>
+                <div class="cart-info-item-price">
+                    <p>Price: $30</p>
+                </div>
+            </div>
+            <img class="cart-info-item-img" src="images/flower1.png">
+        </div> -->
+    </div>
+                            
+</div>

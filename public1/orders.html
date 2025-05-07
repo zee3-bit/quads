@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="orders.css">
+    <script src="orders.js"></script> 
+</head>
+<body>
+    <header class="header">
+        <div class="pageTitle">Quad<span class="redPart">Falls</span></div>
+        <div class="menu">
+            <a href="Flowers.html">Home</a>
+            <a href="checkout.html">Checkout</a>
+            <a href="orders.html">Orders</a>
+            <a href="#">Contact Dev</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="pageSelect">
+            <select id="order-status" onchange= "filterOrders()">
+                <option value = 0 >All Orders</option>
+                <option value = 1 >Ordered</option>
+                <option value = 2 >Completed</option>
+            </select>
+        </div>
+        <div id="cancelled-confirmation" class="age-modal">
+            <div class="age-modal-content" id="cancelled-confirmation-content">
+                <h2>Order Cancelled</h2>
+                <p>If you Click yes, this order will be removed from the DB permanently</p>
+                <button id="cancelled-confirm">Yes</button>
+                <button id="cancelled-decline">No</button>
+            </div>
+        </div>
+
+        <div id="delivered-modal" class="age-modal">
+            <div class="age-modal-content" id="delivered-modal-content">
+                <h2>Order Completed</h2>
+                <p>Click 'yes' to confirm the order has been delivered</p>
+                <button id="delivered-confirm">Yes</button>
+                <button id="delivered-decline">No</button>
+            </div>
+        </div>
+
+        <table id="orders-table">
+            <thead>
+                <tr>
+                    <th>O/N</th>
+                    <th onclick="sortTable('Name')">Name</th>
+                    <th onclick="sortTable('Email')">Email</th>
+                    <th>Address</th>
+                    <th onclick="sortTable('Phone')">Phone</th>
+                    <th>Items</th>
+                    <th onclick="sortTable('Price')">Total Price</th>
+                    <th>Status</th>
+                </tr>
+                
+            </thead>
+            <tbody id="orders-table-body">
+                <!-- Orders will be dynamically added here -->
+                <!--<tr>
+                    <td>1</td>
+                    <td>Dully</td>
+                    <td>oisd@ymail.com</td>
+                    <td>123 eld blvd</td>
+                    <td>1234567890</td>
+                    <td><ul>
+                        <li>Kush Name 1</li>
+                        <li>Kush Name 2</li>
+                        <li>Kush Name 3</li>
+                    </ul></td>
+                    <td>Dully</td>
+                    <td>
+                        <select id="order-status" class="status-select">
+                            <option value="pending" data-color="yellow">Pending</option>
+                            <option value="shipped" data-color="lightblue">Shipped</option>
+                            <option value="delivered" data-color="lightgreen">Delivered</option>
+                            <option value="cancelled" data-color="lightcoral">Cancelled</option>
+                        </select>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </main>
+    <button id="save-btn">Save</button>
+</body>
+</html>

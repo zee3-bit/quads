@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1">
+        <title> Car View</title>
+        <link rel="stylesheet" href="Flowers.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script type="text/javascript" src="Flowers.js"> </script>
+    </head>
+
+    <body id="body">
+
+        <div id="age-check-modal" class="age-modal">
+            <div class="age-modal-content" id="age-modal-content">
+                <h2>Age Verification</h2>
+                <p>You must be 19 years or older to enter this site.</p>
+                <button id="confirm-age">I am 19 or older</button>
+                <button id="not-age" onclick="reject()">I am not</button>
+            </div>
+        </div>
+        
+        <header class="headr">
+            
+            <div class="menu">
+                <a> Home </a>
+                <a href="about.html"> About </a>
+                <a> Country </a>
+                <a> Contact Dev </a>
+            </div>
+        </header>
+
+        <button class="shopcartHolder" id="shopcartHolder" onclick="sidePanel()">
+            <span class="cartCount" id="cartCount">0</span>
+            <img  class="cartIcon" src="images/icons/shopping-cart-128.webp" class="cart"">
+        </button>
+
+        <div class="sidePanel" id="sidePanel">
+            <button class="closebtn" onclick="hidePanel(true)"> &times;</button>
+            <div class="cart-info" id="cart-info"> <!-- flex column-->
+
+            </div>  
+            <div class="total-holder" id="total-holder">
+                <div class="total"> Total: $<span id="total">0</span> <span id="adjTotal"></span> </div>
+                <div class="total"> Weight: <span id="totalWeight">0</span>g </div>
+                <button class="checkout" id="checkout" onclick="checkout()"> Checkout </button>
+            </div>
+        </div>
+
+        
+
+        <div class="Brabus-holder">
+            <div class="content2" id="content2">
+                <div class="cntnt1-info">
+                    <h1>FAST AND RELIABLE DELIVERY ALL OVER THE NIAGARA REGION</h1> <br>
+                    <span>If you not getting from us, you might be a BUM, cant lie 🫥</span> <br>
+                </div>
+                <div class="cntnt2-info">
+                    <!--Brabus 900 Mercedez-Benz E63 <br>
+                    4.5-liter twin-turbo V8 engine <br>
+                    0-62 mph in 2.9 seconds, 0-124 mph in 9.7 seconds <br>
+                    Top speed: 205 mph <br>
+                    21-inch BRABUS Monoblock Z "Platinum Edition" forged wheels <br>
+                    Produces 900 horsepower and 1250 Nm of torque <br>
+                    <img src="images/flower1.png"> -->
+                </div>
+                
+            </div>
+        </div>
+        <div class="brabus-disp">
+            <div id="myModal" class="modal"> 
+                <div class="modal-content" id="modal-content">
+                    <!-- Modal content -->
+                    <div class="close" id="clsbtn" >&times;</div>
+                    <div class="modal-car" id="modal-car">
+                                            
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-holder" id="card-holder">
+                <!--   <div class="brabus-card" >
+                        <div class="img-holder" onclick="openModal('modals/Brabus-XLP900-modal')">
+                            <img class="brabus-card-img" src="images/flower1.png">
+                        </div>
+                        <div class="car-info" id="car-info">
+                            <table>
+                                <tr >
+                                    <td class="lft-colm">
+                                        Name :
+                                    </td>
+                                    <td class="right-colm">
+                                        <span id="name1">Kush Name1</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        THC :
+                                    </td>
+                                    <td class="right-colm">
+                                        25%
+                                    </td>
+                                </tr>
+                                <tsr>
+                                    <td class="lft-colm">
+                                        Strain Type :
+                                    </td>
+                                    <td class="right-colm">
+                                        Indica
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        <label for="weight"> Weight: </label>
+                                    </td>
+                                    <td class="right-colm">
+                                        <select class="weights" id="weight1" onchange="changePrice('quantt1', 'pricetag1')">
+                                            <option value="30">3.5</option>
+                                            <option value="60">7</option>
+                                            <option value="100">14</option>
+                                            <option value="180">28</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Price :
+                                    </td>
+                                    <td class="right-colm">
+                                        $ <span id="pricetag1">30</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="mini-add-section">
+                                <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quantt1', 'weight1', 'pricetag1')"> - </button> <span id="quantt1" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quantt1', 'weight1', 'pricetag1')"> + </button> </span></div>
+                                <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower1.png', 'name1', 'weight1', 'pricetag1', 'quantt1')"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brabus-card">
+                        <div class="img-holder" onclick="openModal('modals/Brabus-1000Rocket-modal')">
+                            <img class="brabus-card-img" src="images/flower2.png">
+                        </div>
+                        <div class="car-info">
+                            <table>
+                                <tr >
+                                    <td class="lft-colm">
+                                        Name :
+                                    </td>
+                                    <td class="right-colm">
+                                        <span id="name2">Kush Name2</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        THC :
+                                    </td>
+                                    <td class="right-colm">
+                                        25%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Strain Type :
+                                    </td>
+                                    <td class="right-colm">
+                                        Indica
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        <label for="weight"> Weight: </label>
+                                    </td>
+                                    <td class="right-colm">
+                                        <select class="weights" id="weight2" onchange="changePrice('quantt2', 'pricetag2')">
+                                            <option value="35">3.5</option>
+                                            <option value="70">7</option>
+                                            <option value="120">14</option>
+                                            <option value="200">28</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Price :
+                                    </td>
+                                    <td class="right-colm">
+                                        $ <span id="pricetag2">35</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="mini-add-section">
+                                <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quantt2', 'weight2', 'pricetag2')"> - </button> <span id="quantt2" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quantt2', 'weight2', 'pricetag2')"> + </button> </span></div>
+                                <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower2.png', 'name2', 'weight2', 'pricetag2', 'quantt2')"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    // What is used to hold the Modal, only 1 modal can be displayed at a time
+                    <div id="myModal" class="modal"> </div> 
+                    <div class="brabus-card">                         
+                        <div class="img-holder"  onclick="openModal('modals/GLE63-modal')">
+                            <img class="brabus-card-img" src="images/flower3.png" >
+                        </div>
+                        <div class="car-info">
+                            <table>
+                                <tr >
+                                    <td class="lft-colm">
+                                        Name :
+                                    </td>
+                                    <td class="right-colm">
+                                        <span id="name3">Kush Name3</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        THC :
+                                    </td>
+                                    <td class="right-colm">
+                                        25%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Strain Type :
+                                    </td>
+                                    <td class="right-colm">
+                                        Indica
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        <label for="weight"> Weight: </label>
+                                    </td>
+                                    <td class="right-colm">
+                                        <select class="weights" id="weight3" onchange="changePrice('quantt3', 'pricetag3')">
+                                            <option value="25">3.5</option>
+                                            <option value="50">7</option>
+                                            <option value="90">14</option>
+                                            <option value="160">28</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Price :
+                                    </td>
+                                    <td class="right-colm">
+                                        $ <span id="pricetag3">25</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="mini-add-section">
+                                <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quantt3', 'weight3', 'pricetag3')"> - </button> <span id="quantt3" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quantt3', 'weight3', 'pricetag3')"> + </button> </span></div>
+                                <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower3.png', 'name3', 'weight3', 'pricetag3', 'quantt3')"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brabus-card">
+                        <div class="img-holder"  onclick="openModal('modals/Brabus-crawler-modal')">
+                            <img class="brabus-card-img" src="images/flower1.png">
+                        </div>
+                        <div class="car-info">
+                            <table>
+                                <tr >
+                                    <td class="lft-colm">
+                                        Name :
+                                    </td>
+                                    <td class="right-colm">
+                                        <span id="name4">Kush Name4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        THC :
+                                    </td>
+                                    <td class="right-colm">
+                                        25%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Strain Type :
+                                    </td>
+                                    <td class="right-colm">
+                                        Indica
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        <label for="weight"> Weight: </label>
+                                    </td>
+                                    <td class="right-colm">
+                                        <select class="weights" id="weight4" onchange="changePrice('quantt4', 'pricetag4')">
+                                            <option value="30">3.5</option>
+                                            <option value="60">7</option>
+                                            <option value="100">14</option>
+                                            <option value="180">28</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Price :
+                                    </td>
+                                    <td class="right-colm">
+                                        $ <span id="pricetag4">30</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="mini-add-section">
+                                <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quantt4', 'weight4', 'pricetag4')"> - </button> <span id="quantt4" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quantt4', 'weight4', 'pricetag4')"> + </button> </span></div>
+                                <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower1.png', 'name4', 'weight4', 'pricetag4', 'quantt4')"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brabus-card">
+                        <div class="img-holder"  onclick="openModal('modals/Brabus-rocketGTS-modal')">
+                            <img class="brabus-card-img" src="images/flower2.png">
+                        </div>
+                        <div class="car-info" id="car-info">
+                            <table>
+                                <tr >
+                                    <td class="lft-colm">
+                                        Name :
+                                    </td>
+                                    <td class="right-colm">
+                                        <span id="name5">Kush Name5</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        THC :
+                                    </td>
+                                    <td class="right-colm">
+                                        25%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Strain Type :
+                                    </td>
+                                    <td class="right-colm">
+                                        Indica
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        <label for="weight"> Weight: </label>
+                                    </td>
+                                    <td class="right-colm">
+                                        <select class="weights" id="weight5" onchange="changePrice('quantt5', 'pricetag5')">
+                                            <option value="35">3.5</option>
+                                            <option value="70">7</option>
+                                            <option value="120">14</option>
+                                            <option value="200">28</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Price :
+                                    </td>
+                                    <td class="right-colm">
+                                        $ <span id="pricetag5">35</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="mini-add-section">
+                                <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quantt5', 'weight5', 'pricetag5')"> - </button> <span id="quantt5" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quantt5', 'weight5', 'pricetag5')"> + </button> </span></div>
+                                <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower2.png', 'name5', 'weight5', 'pricetag5', 'quantt5')"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brabus-card">
+                        <div class="img-holder"  onclick="openModal('modals/Brabus-E63-modal')">
+                            <img class="brabus-card-img" src="images/flower3.png">
+                        </div>
+                        <div class="car-info" id="car-info">
+                            <table>
+                                <tr >
+                                    <td class="lft-colm">
+                                        Name :
+                                    </td>
+                                    <td class="right-colm">
+                                        <span id="name6">Kush Name6</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        THC :
+                                    </td>
+                                    <td class="right-colm">
+                                        25%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Strain Type :
+                                    </td>
+                                    <td class="right-colm">
+                                        Indica
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        <label for="weight"> Weight: </label>
+                                    </td>
+                                    <td class="right-colm">
+                                        <select class="weights" id="weight6" onchange="changePrice('quantt6', 'pricetag6')">
+                                            <option value="30">3.5</option>
+                                            <option value="60">7</option>
+                                            <option value="100">14</option>
+                                            <option value="180">28</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Price :
+                                    </td>
+                                    <td class="right-colm">
+                                        $ <span id="pricetag6">30</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="mini-add-section">
+                                <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quantt6', 'weight6', 'pricetag6')"> - </button> <span id="quantt6" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quantt6', 'weight6', 'pricetag6')"> + </button> </span></div>
+                                <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower3.png', 'name6', 'weight6', 'pricetag6', 'quantt6')"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brabus-card">
+                        <div class="img-holder"  onclick="openModal('modals/Brabus-930-modal')">
+                            <img class="brabus-card-img" src="images/flower1.png">
+                        </div>
+                        <div class="car-info" id="car-info">
+                            <table>
+                                <tr >
+                                    <td class="lft-colm">
+                                        Name :
+                                    </td>
+                                    <td class="right-colm">
+                                       <span id="name7">Kush Name7</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        THC :
+                                    </td>
+                                    <td class="right-colm">
+                                        25%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Strain Type :
+                                    </td>
+                                    <td class="right-colm">
+                                        Indica
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        <label for="weight"> Weight: </label>
+                                    </td>
+                                    <td class="right-colm">
+                                        <select class="weights" id="weight7" onchange="changePrice('quantt7', 'pricetag7')">
+                                            <option value="30">3.5</option>
+                                            <option value="60">7</option>
+                                            <option value="100">14</option>
+                                            <option value="180">28</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Price :
+                                    </td>
+                                    <td class="right-colm">
+                                        $ <span id="pricetag7">30</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="mini-add-section">
+                                <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quantt7', 'weight7', 'pricetag7')"> - </button> <span id="quantt7" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quantt7', 'weight7', 'pricetag7')"> + </button> </span></div>
+                                <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower1.png', 'name7', 'weight7', 'pricetag7', 'quantt7')"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brabus-card">
+                        <div class="img-holder"  onclick="openModal('modals/Brabus-bigboy-modal')">
+                            <img class="brabus-card-img" src="images/flower2.png">
+                        </div>
+                        <div class="car-info" id="car-info">
+                            <table>
+                                <tr >
+                                    <td class="lft-colm">
+                                        Name :
+                                    </td>
+                                    <td class="right-colm">
+                                        <span id="name8">Kush Name8</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        THC :
+                                    </td>
+                                    <td class="right-colm">
+                                        25%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Strain Type :
+                                    </td>
+                                    <td class="right-colm">
+                                        Indica
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        <label for="weight"> Weight: </label>
+                                    </td>
+                                    <td class="right-colm">
+                                        <select class="weights" id="weight8" onchange="changePrice('quantt8', 'pricetag8')">
+                                            <option value="35">3.5</option>
+                                            <option value="70">7</option>
+                                            <option value="120">14</option>
+                                            <option value="200">28</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lft-colm">
+                                        Price :
+                                    </td>
+                                    <td class="right-colm">
+                                        $ <span id="pricetag8">35</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="mini-add-section">
+                                <div>Quantity: <span> <button class="quantBtn" onclick="subtract('quantt8', 'weight8', 'pricetag8')"> - </button> <span id="quantt8" value="test" > 1 </span> <button class="quantBtn" onclick="addition('quantt8', 'weight8', 'pricetag8')"> + </button> </span></div>
+                                <button class="cartBtn" id="add-to-cart" onclick="showCart('images/flower2.png', 'name8', 'weight8', 'pricetag8', 'quantt8')"> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>  --> 
+            </div>
+        </div>
+        <footer class="flower-footer">
+            <div class="footer-content">
+                <h2> Quad<span class="redPart">Falls</span></h2>
+                <p class="footer-text"> All Rights Reserved 2021</p>
+                <p class="footer-info">
+                    <i class="fas fa-phone-alt text-green-500 mr-3"></i> </br>
+                    <a href="tel:905-123-4567">  905-123-4567 </a>
+                </p>
+                <p class="footer-info">
+                    <i class="fas fa-envelope text-green-500 mr-3"></i> </br>
+                    <a href="mailto:habitconnect87@gmail.com">  habitconnect87@gmail.com </a>
+                </p>
+            </div>  
+            
+            <div class="footer-content">
+                <h2> Our Location </h2>
+                <p class="footer-text"> 1234 Flower Street </p>
+                <p class="footer-text"> Niagara Falls, ON </p>
+                <p class="footer-text"> L2G 3H2 </p>
+            </div>
+
+            <div class="footer-content">
+                <h2> Follow Us </h2>
+                <div class="social-media">
+                    <a href="https://www.facebook.com" target="_blank"> <img class="social-icon" src="images/icons/icons8-facebook-48.png"> </a>
+                    <a href="https://www.instagram.com" target="_blank"> <img class="social-icon" src="images/icons/icons8-instagram-48.png"> </a>
+                    <a href="https://www.twitter.com" target="_blank"> <img class="social-icon" src="images/icons/icons8-twitter-50.png"> </a>
+                </div>
+            </div>
+
+            <div class="footer-content">
+                <h2> Hours of Operation </h2>
+                <p class="footer-text"> Monday - Friday: 9am - 9pm </p> 
+                <p class="footer-text"> Saturday: 10am - 6pm </p>
+                <p class="footer-text"> Sunday: 12pm - 5pm </p>
+
+            </div>
+
+        </footer>
+    </body>
+
+</html>
